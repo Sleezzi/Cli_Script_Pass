@@ -1,0 +1,50 @@
+
+body[index="1"] section#welcom {
+	right: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	text-align: center;
+}
+main > img {
+	height: 50%;
+	max-width: 45%;
+	position: relative;
+	overflow: hidden;
+}
+#container {
+	width: 45%;
+	height: 100%;
+}
+#page {
+	position: relative;
+	height: 90%;
+	width: calc(100% - 1rem * 2);
+	padding: 0 1rem;
+	overflow: hidden;
+}
+section {
+	height: 100%;
+	width: 100%;
+	background: var(--background);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	position: absolute;
+	right: -100%;
+	transition: right .5s ease;
+}
+#button {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 10%;
+	width: 100%;
+}
+h3 {
+	margin: 0;
+	padding: 0;
+}

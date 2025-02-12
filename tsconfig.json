@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "outDir": "./build",
+        "module": "CommonJS",
+        "target": "esnext",
+        "lib": [ "ESNext", "DOM" ],
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "strict": true,
+        "removeComments": false,
+        "sourceMap": true,
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["**/*.ts"],
+    "exclude": ["node_modules", "build", "builder.js" ]
+}
