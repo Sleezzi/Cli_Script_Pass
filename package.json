@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.ts",
   "scripts": {
-    "start": "cls && node builder.js && tsc && electron build/main.js",
+    "start": "cls && node builder.js && tsc && cd build && electron main.js && cd ..",
     "build": "node builder.js && tsc && electron-builder build/main.js"
   },
   "keywords": [],
@@ -14,12 +14,12 @@
   "dependencies": {
     "cors": "^2.8.5",
     "electron": "^34.1.1",
-    "express": "^4.21.2",
-    "tsc": "^2.0.4"
+    "express": "^4.21.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/electron": "^1.4.38",
-    "@types/express": "^5.0.0"
+    "@types/express": "^5.0.0",
+    "tsc": "^2.0.4"
   }
 }

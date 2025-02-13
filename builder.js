@@ -1,6 +1,6 @@
 const { existsSync, mkdirSync, readdirSync, rmSync, appendFileSync, readFileSync } = require("fs");
 
-const build = "./build";
+const build = "./build/";
 const src = "./"
 
 const exclude = [
@@ -8,8 +8,7 @@ const exclude = [
 	"node_modules",
 	"builder.js",
 	"tsconfig.json",
-	".gitignore",
-	build.replace(src, "")
+	".gitignore"
 ];
 
 const navigate = (path) => {
@@ -20,11 +19,13 @@ const navigate = (path) => {
 			!exclude.find(name => name === file.name)
 		)
 	) {
+		if (path.startsWith(build.slice(0, build.length-1))) continue;
+
 		if (file.isFile()) {
-			appendFileSync(`${build}/${path.replace(src, "")}${file.name}`, readFileSync(`${path}${file.name}`, { encoding: "utf8" }))
+			appendFileSync(`${build}${path.replace(src, "")}${file.name}`, readFileSync(`${path}${file.name}`));
 		}
 		if (file.isDirectory()) {
-			mkdirSync(`${build}/${path.replace(src, "")}${file.name}`);
+			mkdirSync(`${build}${path.replace(src, "")}${file.name}`);
 			navigate(`${path}${file.name}/`);
 		}
 	}

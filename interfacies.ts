@@ -6,5 +6,3 @@ export interface Page {
 	method?: "GET" | "PUT" | "POST" | "DELETE",
 	execute: (request: Request, response: Response, app: App) => void
 }
-
-export default {};
